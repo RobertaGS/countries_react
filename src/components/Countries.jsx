@@ -7,7 +7,7 @@ const Countries = () => {
     //greiciausiai card elementas is bootstrap
   return (
     <div>Countries
-        <h2>Viena konkreti salis</h2>
+        <h2 style={{color: 'purple', backgroundColor:'yelow'}}>Viena konkreti salis</h2>
     </div>
   )
 }
