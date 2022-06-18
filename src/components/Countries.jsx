@@ -1,15 +1,18 @@
 import React from 'react'
+import axios from 'axios';
 
-const Countries = () => {
 
-    //cia bus vieta saliu meniu, dar nezinau kai ispildysiu
-    //cia bus vienos salies atvaizdavimo kortele
-    //greiciausiai card elementas is bootstrap
+const Countries = (props) => {
+  console.log('labas')
+  //console.log(props.countries)
+  
+
   return (
-    <div>Countries
-        <h2 style={{color: 'purple', backgroundColor:'yelow'}}>Viena konkreti salis</h2>
+    <div>{
+        
+    }
     </div>
-  )
+  );
 }
 
 export default Countries

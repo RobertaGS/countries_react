@@ -3,9 +3,9 @@ import axios from 'axios';
 //prisijungimas prie API
 const API_URL = `https://restcountries.com/v3.1`;
 
-class CountryService{
+class CountriesData{
     //visu saliu gavimui
-    getAllCountries(){
+    getCountriesAll(){
         return axios.get(
             API_URL+/all/,
 
@@ -17,7 +17,7 @@ class CountryService{
         )
     }
     //konkrecios salies gavimui
-    getsalis(name){
+    getOneCountry(name){
         return axios.get(
             API_URL+'/name/'+name,
             {
@@ -29,6 +29,4 @@ class CountryService{
     }
 }
 
-export default new CountryService();
-
-
+export default new CountriesData();
