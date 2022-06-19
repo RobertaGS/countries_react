@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
-import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 const OneCountry = ({setSearchCountries}) => {
 
-  const [countryTitle, setCountryTitle] = useStet('');
+  const [countryTitle, setCountryTitle] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(countryTitle===""){
+    if(countryTitle ===""){
       alert("Please, entry country name")
 
     }else{
@@ -18,19 +18,20 @@ const OneCountry = ({setSearchCountries}) => {
 
   return (
     <div className="conteiner">
-      <h2 className="row justyfy-content-center">Paieškos laukas</h2>
-      <form className="row justify-content-center" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <input 
-          type="text"
-          name="name"
-          className="form-control"
-          placeholder="Country Title"
-          onChange={(e)=>setCountryTitle(e.target.value)}
-          value={countryTitle}/>
-        </div>
-      </form>
-    </div>
+        <form className="row justify-content-center" onSubmit={handleSubmit}>
+          <div className="col-3 form-group">
+            <input 
+            type="text"
+            name="OneCountry.Name"
+            className="form-control"
+            placeholder="Country Title"
+            onChange={(e)=>setCountryTitle(e.target.value)}
+            value={countryTitle}/>
+            <Button variant="outline-primary mt-2">Search</Button>{''}           
+          </div>
+        </form>
+      </div>
+    
   )
 }
 

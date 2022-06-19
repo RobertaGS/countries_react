@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //prisijungimas prie API
-const API_URL = `https://restcountries.com/v3.1`;
+const API_URL = `https://restcountries.com/v3.1/`;
 
 class CountriesData{
     //visu saliu gavimui
