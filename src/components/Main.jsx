@@ -3,18 +3,18 @@ import Countries from './Countries';
 import CountriesData from '../services/CountriesData';
 import OneCountry from './OneCountry';
 
-
+//1-importuoju react KOMPONENTA
+//2-is kur importuoju katalogas failas FROM
 const Main = () => {
-  const[searchValue, setSearchValue] = useState('');
+  //tevinis komponentas
+  const[SearchValue, setSearchValue] = useState('');
   const[countries, setCountries] = useState('');
 
-  const setSearchCountries = (value) =>{
-
-    setSearchCountries(value);
+  const setSearchCountries = (value)=> {
+  setSearchCountries(value);
+}
   
-  }
-
-  const getCountriesAll = async () => {
+  const getCountriesAll = async (SearchValue) => {
     try{
       const response = await fetch(`https://restcountries.com/v3.1/all`);
       const Countries = await response.json();
@@ -23,22 +23,27 @@ const Main = () => {
       console.log(error);
       
     }
+    
   };
+  
   getCountriesAll();
   
-   let Countries ='';
-     if (countries['Response'] === 'True'){
-       countries = <countries countries = {countries}/>;
-    }  
+  useEffect(()=>{
+    getCountriesAll(SearchValue);
 
-    return (
-      <div className="column">
-        <h1 style={{marginTop:"10px", textAlign:"center", color:'blue' }}>Countries App</h1>
-        <Countries/>
-        <OneCountry/>
-        <CountriesData/>
-      </div>
+  }, [SearchValue])  
+     
+
+    return (    
+        <div className="container">
+          <h1 style={{marginTop:"10px", textAlign:"center", color:'blue' }}>Search Countries</h1>
+          <OneCountry/>
+          <Countries OneCountry={setSearchCountries}/>
+          {Countries['Response'] === 'True'? <Countries countries = {countries}/> : ''}
+          <CountriesData/>
+        </div>
       )
+    }
 
-  }
+  
 export default Main

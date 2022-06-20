@@ -1,21 +1,23 @@
 import React from 'react'
-import OneCountry from './OneCountry'
+import { Button } from 'react-bootstrap';
+
 
 const Countries = (props) => {
   console.log('labas')
-  console.log(props.countries)
+  console.log(props.Countries)
 //vienos salies atvaizdavimas korteleje(card)
-
   return(
-    <div className="Card">
+    <div className="Cards">
       {
-        props.countries? props.countries.map((OneCountry, index)=> {
+        props.Countries? props.Countries.map((OneCountry, index)=> {
             return(
-                <div className="countriesCard" style={{width: '16rem'}} key={index}>
-                  <p>{OneCountry.name.common}</p>
+                <div className="countriesCard" 
+                  style= {{width: '16rem'}}>
+                  <p key={index}></p>
+                  <p>Country: {OneCountry.name.common}</p>
                   <img src={OneCountry.flags.png} alt=""/>
                   <button>More about Country</button>
-               </div>
+                </div>
             )
 
               // <Card style={{ width: '18rem' }} key={index}>

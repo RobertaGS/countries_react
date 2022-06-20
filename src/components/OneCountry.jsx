@@ -3,8 +3,9 @@ import { Button } from 'react-bootstrap';
 
 const OneCountry = ({setSearchCountries}) => {
 
-  const [countryTitle, setCountryTitle] = useState('');
-  const handleSubmit = (e) => {
+const [countryTitle, setCountryTitle] = useState('');
+  
+const handleSubmit = (e) => {
     e.preventDefault();
 
     if(countryTitle ===""){
@@ -17,12 +18,12 @@ const OneCountry = ({setSearchCountries}) => {
   }
 
   return (
-    <div className="conteiner">
+    <div className="container">
         <form className="row justify-content-center" onSubmit={handleSubmit}>
           <div className="col-3 form-group">
             <input 
             type="text"
-            name="OneCountry.Name"
+            countryTitle="OneCountry.name.common"
             className="form-control"
             placeholder="Country Title"
             onChange={(e)=>setCountryTitle(e.target.value)}
